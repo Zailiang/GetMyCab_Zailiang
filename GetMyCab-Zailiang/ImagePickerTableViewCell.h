@@ -12,6 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UIImageView *imgview;
 
-- (IBAction)btn_image:(id)sender;
+
 
 @end

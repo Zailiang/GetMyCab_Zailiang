@@ -12,4 +12,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UITextField *textfield;
 
+@property (weak, nonatomic) IBOutlet UIButton *btn_enable;
+
+
+
+
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DriverInfo.h"
+#import "CoreLocation/CoreLocation.h"
 
-@interface DriverRegisterViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface DriverRegisterViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate,CLLocationManagerDelegate>
 
 @end

@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,23 +15,22 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U42-ub-OMk">
-                                <rect key="frame" x="85" y="316" width="150" height="2"/>
-                            </progressView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Lig-CZ-Bl6">
-                                <rect key="frame" x="151" y="252" width="20" height="20"/>
-                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="my_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="6de-I0-Oc6">
-                                <rect key="frame" x="40" y="88" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="750X1334.png" translatesAutoresizingMaskIntoConstraints="NO" id="6de-I0-Oc6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6de-I0-Oc6" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="SVq-7C-Gw9"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="6de-I0-Oc6" secondAttribute="bottom" id="V2q-vr-Wdq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6de-I0-Oc6" secondAttribute="trailing" constant="-20" id="dHZ-pk-bC1"/>
+                            <constraint firstItem="6de-I0-Oc6" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="fvw-66-DYL"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="my_logo.png" width="447" height="310"/>
+        <image name="750X1334.png" width="750" height="1334"/>
     </resources>
 </document>

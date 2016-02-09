@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CtmRegisterViewController : UIViewController<UITextFieldDelegate>
+@interface CtmRegisterViewController : UIViewController<UITextFieldDelegate,UITableViewDelegate>
 
 @end

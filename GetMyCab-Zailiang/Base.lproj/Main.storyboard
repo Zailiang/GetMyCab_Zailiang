@@ -104,11 +104,15 @@
                                     <action selector="btn_login:" destination="yO3-dn-dbN" eventType="touchUpInside" id="zzp-fb-RIE"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kWp-bw-r4d">
+                                <rect key="frame" x="150" y="288" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="indicator" destination="kWp-bw-r4d" id="rIZ-QV-YtX"/>
                         <outlet property="password" destination="21h-Ys-z04" id="IeX-1B-ZVC"/>
                         <outlet property="userName" destination="jyO-vW-zDw" id="dIb-wX-4Aa"/>
                     </connections>
@@ -197,18 +201,18 @@
                         <viewControllerLayoutGuide type="bottom" id="ugc-aK-J36"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ySa-Bz-0Ib">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aV8-bj-vHC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="149" width="320" height="365"/>
                                 <connections>
                                     <outlet property="delegate" destination="yiM-Cv-29v" id="r9l-Dl-Zhf"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssC-H4-hsj">
-                                <rect key="frame" x="137" y="171" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssC-H4-hsj">
+                                <rect key="frame" x="106" y="71" width="127" height="54"/>
+                                <state key="normal" title="Button" image="button-3.png"/>
                                 <connections>
                                     <action selector="btn_clicked:" destination="yiM-Cv-29v" eventType="touchUpInside" id="Myy-Xu-RGG"/>
                                 </connections>
@@ -216,7 +220,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="btn_tapped" destination="ssC-H4-hsj" id="ET5-Vv-Fkw"/>
                         <outlet property="mapView" destination="aV8-bj-vHC" id="cGp-gu-1Iv"/>
@@ -224,7 +228,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xeZ-1G-dBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1766" y="702"/>
+            <point key="canvasLocation" x="1782" y="433"/>
+        </scene>
+        <!--Ctm Book View Controller-->
+        <scene sceneID="l0d-Tm-F39">
+            <objects>
+                <viewController storyboardIdentifier="CtmBookViewController" id="0zD-yT-3I9" customClass="CtmBookViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yev-OW-Lmc"/>
+                        <viewControllerLayoutGuide type="bottom" id="kV7-dH-fVa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yow-Zx-Yvg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick-Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpM-Xy-mdg">
+                                <rect key="frame" x="20" y="76" width="103" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Drop-Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OcD-o3-YTT">
+                                <rect key="frame" x="20" y="124" width="103" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Hr-cK-BIJ">
+                                <rect key="frame" x="111" y="121" width="189" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="MyCustomAnnotation" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RVj-hu-9H1">
+                                <rect key="frame" x="20" y="173" width="280" height="375"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0zD-yT-3I9" id="3tZ-a8-zHH"/>
+                                </connections>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UrD-se-tPD">
+                                <rect key="frame" x="111" y="72" width="189" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="mapView" destination="RVj-hu-9H1" id="sii-FT-Nfl"/>
+                        <outlet property="txtField_DropOff" destination="9Hr-cK-BIJ" id="tqf-ya-EHV"/>
+                        <outlet property="txtField_PickUp" destination="UrD-se-tPD" id="XNI-jn-Qdn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pBX-pz-z9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1811" y="723"/>
         </scene>
         <!--Driver Home-->
         <scene sceneID="R8Z-2c-YXm">
@@ -235,15 +293,46 @@
                         <viewControllerLayoutGuide type="bottom" id="Kkg-OG-3ti"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="d63-Pj-ceq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2S0-rB-Mla">
+                                <rect key="frame" x="0.0" y="28" width="320" height="418"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Bfj-Yn-Tcr" id="C6q-qD-aN5"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEN-zQ-hFb">
+                                <rect key="frame" x="20" y="468" width="102" height="34"/>
+                                <state key="normal" title="On Duty" image="onduty.png"/>
+                                <connections>
+                                    <action selector="btn_onDuty:" destination="Bfj-Yn-Tcr" eventType="touchUpInside" id="egs-rD-LIw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZm-Fe-0pd">
+                                <rect key="frame" x="162" y="468" width="115" height="33"/>
+                                <state key="normal" title="Off Duty" image="offduty.png"/>
+                                <connections>
+                                    <action selector="btn_offDuty:" destination="Bfj-Yn-Tcr" eventType="touchUpInside" id="yDw-W0-55K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDG-Z0-K6A">
+                                <rect key="frame" x="89" y="513" width="108" height="35"/>
+                                <state key="normal" title="Booking" image="bookings.png"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="btn_offDutyClicked" destination="lZm-Fe-0pd" id="k5i-g1-Gb5"/>
+                        <outlet property="btn_onDutyClicked" destination="PEN-zQ-hFb" id="f2g-Dz-wmL"/>
+                        <outlet property="mapView" destination="2S0-rB-Mla" id="bQZ-c9-1ro"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kr4-cE-8cq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2128" y="702"/>
+            <point key="canvasLocation" x="2209" y="467"/>
         </scene>
         <!--Driver Register-->
         <scene sceneID="K8g-kP-NDB">
@@ -386,7 +475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g6c-pE-dLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2007" y="121"/>
+            <point key="canvasLocation" x="2144" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jkG-Gs-4EU">
@@ -409,10 +498,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bookings.png" width="133" height="40"/>
+        <image name="button-3.png" width="147" height="40"/>
         <image name="clogin.png" width="189" height="46"/>
         <image name="dlogin.png" width="163" height="46"/>
         <image name="login_1.png" width="97" height="46"/>
         <image name="my_logo.png" width="447" height="310"/>
+        <image name="offduty.png" width="139" height="40"/>
+        <image name="onduty.png" width="133" height="40"/>
         <image name="signup_1.png" width="109" height="46"/>
         <image name="submit_1.png" width="112" height="46"/>
     </resources>

@@ -76,6 +76,11 @@ static bool bloodFlag = NO;
     for (int i=0; i<13; i++) {
         arrItemValue[i]=@" ";
         //[arrItemValue insertObject:@" " atIndex:i];
+        
+        
+        UIBarButtonItem * btn_back = [[UIBarButtonItem alloc]initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+        self.navigationItem.leftBarButtonItem = btn_back;
+
     }
  
     
@@ -104,8 +109,11 @@ static bool bloodFlag = NO;
         [cell.label setText:arrItem[indexPath.row]];
         [cell.textfield setTag:indexPath.row+1];
         
-        if (indexPath.row==3) {
+        if (indexPath.row==3||indexPath.row==4) {
             cell.textfield.placeholder = @"5 to 10 charactor";
+            [cell.textfield setSecureTextEntry:YES];
+        }else{
+            [cell.textfield setSecureTextEntry:NO];
         }
         
         if (indexPath.row==8||indexPath.row==9||indexPath.row==10) {
@@ -114,8 +122,13 @@ static bool bloodFlag = NO;
         }else{
             [cell.btn_enable setHidden:YES]; //[cell.btn_enable setEnabled:NO];
         }
-
+        
+        
+        if ([arrItemValue[indexPath.row] isEqualToString:@" "]) {
+            [cell.textfield setText:@""];
+        }else{
        [cell.textfield setText:arrItemValue[indexPath.row]];
+        }
         
         return cell;
     }else if(indexPath.row==12){  // city
@@ -124,12 +137,12 @@ static bool bloodFlag = NO;
         [cell.textfield setTag:indexPath.row+1];
         [self getCurrentLocation];
         cell.textfield.text=arrItemValue[12];
+        [cell.textfield setSecureTextEntry:NO];
         return cell;
         
     }else { //  if(indexPath.row == 11)   image picture
         ImagePickerTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell3"];
         [cell.label setText:arrItem[indexPath.row]];
-        
         
         /////////////////////////////////////////
         [cell.imgview setUserInteractionEnabled:YES];
@@ -141,7 +154,6 @@ static bool bloodFlag = NO;
         
         return cell;
     }
-    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -159,6 +171,7 @@ static bool bloodFlag = NO;
     
     UITableViewCell *cell = (UITableViewCell*) [[textField superview] superview];
     [self.tableView scrollToRowAtIndexPath:[self.tableView indexPathForCell:cell] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+   
     
 //    if (textField.tag == 9) {
 //        [self.datePicker setEnabled:YES];
@@ -185,6 +198,19 @@ static bool bloodFlag = NO;
    
     [textField resignFirstResponder];
     
+
+    
+    
+    
+    
+    
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+   
+    [textField resignFirstResponder];
+    
+    
     ////////    validation     /////////////
     
     if(textField.tag==1){
@@ -198,10 +224,10 @@ static bool bloodFlag = NO;
             nameFLAG = NO;
             [textField setTextColor:[UIColor redColor]];
             textField.text=@"Not valid name";
-           errorMsg = [errorMsg stringByAppendingString:@"Please enter valid Name.\n"];
+            errorMsg = [errorMsg stringByAppendingString:@"Please enter valid Name.\n"];
             [self alert];
         }
-
+        
     }else if (textField.tag == 2){
         // Email
         NSString *conditionEmail = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}";
@@ -216,7 +242,7 @@ static bool bloodFlag = NO;
             errorMsg = [errorMsg stringByAppendingString:@"Please enter valid Email.\n"];
             [self alert];
         }
-
+        
     }else if (textField.tag == 3){
         // Mobile No.
         NSString *conditionMobile = @"[0-9]{10}";
@@ -231,7 +257,7 @@ static bool bloodFlag = NO;
             errorMsg = [errorMsg stringByAppendingString:@"Telephone No. should be 10 digits.\n"];
             [self alert];
         }
-
+        
     }else if (textField.tag ==4){
         // Password
         NSString *conditionPassword = @"[A-Z0-9a-z._%+-@!]{5,10}";
@@ -246,7 +272,7 @@ static bool bloodFlag = NO;
             errorMsg = [errorMsg stringByAppendingString:@"Password should be 5 to 10 characters.\n"];
             [self alert];
         }
-
+        
     }else  if (textField.tag==5){
         // Confirm Password
         if ([arrItemValue[4]isEqualToString:arrItemValue[3]]) {
@@ -259,7 +285,7 @@ static bool bloodFlag = NO;
             errorMsg = [errorMsg stringByAppendingString:@"Confirm Password should be same.\n"];
             [self alert];
         }
-
+        
     }else if (textField.tag ==6){
         // Vehicle No.
         if ([textField.text isEqualToString:@" "]) {
@@ -269,7 +295,7 @@ static bool bloodFlag = NO;
             [self alert];
             vehicleNoFLAG = NO;
         }else{
-               vehicleNoFLAG = YES;
+            vehicleNoFLAG = YES;
             [textField setTextColor:[UIColor blackColor]];
         }
     }else if(textField.tag==7){
@@ -283,9 +309,9 @@ static bool bloodFlag = NO;
         }else{
             licenseNoFLAG = YES;
             [textField setTextColor:[UIColor blackColor]];
-
+            
         }
-
+        
     }else if(textField.tag == 8){
         // Emergency No.
         NSString *conditionemergencyNo = @"[0-9]{10}";
@@ -299,20 +325,12 @@ static bool bloodFlag = NO;
             errorMsg = [errorMsg stringByAppendingString:@"Emergency No. should be 10 digits.\n"];
             [self alert];
             emergencyNoFLAG = NO;
-                    }
-
+        }
+        
     }
 
     
     
-    
-    
-    
-}
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-   
-    [textField resignFirstResponder];
     return YES  ;
 }
 
@@ -688,6 +706,8 @@ static bool bloodFlag = NO;
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-
+-(void)back{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

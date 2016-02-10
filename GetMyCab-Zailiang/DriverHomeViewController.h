@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
 
-@interface DriverHomeViewController : UIViewController
+@interface DriverHomeViewController : UIViewController<CLLocationManagerDelegate,MKMapViewDelegate>
+
+@property NSString * mobile;
 
 @end

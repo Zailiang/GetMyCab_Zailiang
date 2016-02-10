@@ -7,11 +7,15 @@
 //
 
 #import "CtmLogInViewController.h"
+#import "CtmBookViewController.h"
+#import "AppDelegate.h"
 
-@interface CtmLogInViewController ()
+@interface CtmLogInViewController (){
+    
+    NSString * pickUpLocation;
+}
 - (IBAction)btn_clicked:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btn_tapped;
-
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @property (nonatomic) CLLocationManager * locationManager;
@@ -26,6 +30,10 @@
     
     self.mapView.showsUserLocation = YES;
     [self.mapView setHidden:YES];
+    
+    UIBarButtonItem * btn_back = [[UIBarButtonItem alloc]initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    self.navigationItem.leftBarButtonItem = btn_back;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +47,31 @@
     
     [self.locationManager setDelegate:self] ;
       [self.locationManager startUpdatingLocation];
+    
+    
+    //--- get pick-up location from AppDelegate ---//
+    AppDelegate * myappdelegate = [[UIApplication sharedApplication]delegate];
+    pickUpLocation = myappdelegate.pickupLocation;
+    
+    
+    //--URL--//
+    NSURL *url =[NSURL URLWithString:[NSString stringWithFormat:@"http://rjtmobile.com/ansari/driver_search.php?city=%@",pickUpLocation]];
+    NSLog(@"URL: %@",url);
+    
+    //--- excute URLRequest ---//
+    [[[NSURLSession sharedSession]dataTaskWithRequest:[self getURLRequestForRegistration:url] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        //NSLog(@"%@",error);
+        if (!error) {
+            NSString* responseString = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"response string from server:%@",responseString);
+            dispatch_sync(dispatch_get_main_queue(), ^{
+    
+                //NSLog(@"%f,%f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+            });
+        }
+    }] resume];//resume!!!
+    
+
 }
 
 #pragma mark MapKit delegate
@@ -50,14 +83,39 @@
     MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
     point.coordinate = userLocation.coordinate;
     [self.mapView addAnnotation:point];
+    
 
+}
+
+//--- booking btn clicked ---//
+
+- (IBAction)btn_clicked:(id)sender {
+    
+    CtmBookViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CtmBookViewController"];
+    
+    
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    [self.mapView setHidden:NO];
+    //[self.btn_tapped setHidden:YES];
 }
 
 
 
-- (IBAction)btn_clicked:(id)sender {
-    [self.mapView setHidden:NO];
-    [self.btn_tapped setHidden:YES];
+#pragma mark- URL
+
+-(NSURLRequest*)getURLRequestForRegistration:(NSURL*)url{
+    
+    NSMutableURLRequest * urlRequest = [NSMutableURLRequest requestWithURL:url];
+    [urlRequest setTimeoutInterval:180];
+    [urlRequest setHTTPMethod:@"POST"];
+    [urlRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+    return urlRequest   ;
+}
+
+
+-(void)back{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
 

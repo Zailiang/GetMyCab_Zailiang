@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50674051C6A9B0300678CDC /* button-3.png in Resources */ = {isa = PBXBuildFile; fileRef = D50674041C6A9B0300678CDC /* button-3.png */; };
+		D50674081C6AA25700678CDC /* CtmBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50674071C6AA25700678CDC /* CtmBookViewController.m */; };
 		D50700FA1C6950CF00BE471B /* CtmLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50700F91C6950CF00BE471B /* CtmLogInViewController.m */; };
 		D50700FD1C6958D000BE471B /* DriverHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D50700FC1C6958D000BE471B /* DriverHomeViewController.m */; };
 		D5795D1E1C60263C00A5FC85 /* submit_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D5795D1D1C60263C00A5FC85 /* submit_1.png */; };
@@ -41,9 +43,15 @@
 		D59814F11C60217900E6E07B /* CtmRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D59814F01C60217900E6E07B /* CtmRegisterViewController.m */; };
 		D5E3B1431C69ABC2004347F5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E3B1421C69ABC2004347F5 /* MapKit.framework */; };
 		D5E3B1451C69ABCB004347F5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E3B1441C69ABCB004347F5 /* CoreLocation.framework */; };
+		D5E3B1471C6A856E004347F5 /* onduty.png in Resources */ = {isa = PBXBuildFile; fileRef = D5E3B1461C6A856E004347F5 /* onduty.png */; };
+		D5E3B1491C6A8580004347F5 /* offduty.png in Resources */ = {isa = PBXBuildFile; fileRef = D5E3B1481C6A8580004347F5 /* offduty.png */; };
+		D5E3B14B1C6A858A004347F5 /* bookings.png in Resources */ = {isa = PBXBuildFile; fileRef = D5E3B14A1C6A858A004347F5 /* bookings.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D50674041C6A9B0300678CDC /* button-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-3.png"; path = "../../../Downloads/button-3.png"; sourceTree = "<group>"; };
+		D50674061C6AA25700678CDC /* CtmBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtmBookViewController.h; sourceTree = "<group>"; };
+		D50674071C6AA25700678CDC /* CtmBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtmBookViewController.m; sourceTree = "<group>"; };
 		D50700F81C6950CF00BE471B /* CtmLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CtmLogInViewController.h; sourceTree = "<group>"; };
 		D50700F91C6950CF00BE471B /* CtmLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtmLogInViewController.m; sourceTree = "<group>"; };
 		D50700FB1C6958D000BE471B /* DriverHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriverHomeViewController.h; sourceTree = "<group>"; };
@@ -91,6 +99,9 @@
 		D59814F01C60217900E6E07B /* CtmRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CtmRegisterViewController.m; sourceTree = "<group>"; };
 		D5E3B1421C69ABC2004347F5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D5E3B1441C69ABCB004347F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D5E3B1461C6A856E004347F5 /* onduty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = onduty.png; path = ../../../Downloads/onduty.png; sourceTree = "<group>"; };
+		D5E3B1481C6A8580004347F5 /* offduty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = offduty.png; path = ../../../Downloads/offduty.png; sourceTree = "<group>"; };
+		D5E3B14A1C6A858A004347F5 /* bookings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bookings.png; path = ../../../Downloads/bookings.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,9 +128,13 @@
 				D5795DAD1C640D1600A5FC85 /* 40X40.png */,
 				D5795D9E1C6409FE00A5FC85 /* 80X80.png */,
 				D5795D9F1C6409FE00A5FC85 /* 87X87.png */,
+				D5E3B1461C6A856E004347F5 /* onduty.png */,
 				D5795DA01C6409FE00A5FC85 /* 120X120.png */,
+				D5E3B14A1C6A858A004347F5 /* bookings.png */,
+				D5E3B1481C6A8580004347F5 /* offduty.png */,
 				D5795DA11C6409FE00A5FC85 /* 152X152.png */,
 				D5795DA21C6409FE00A5FC85 /* 180X180.png */,
+				D50674041C6A9B0300678CDC /* button-3.png */,
 				D5795D1D1C60263C00A5FC85 /* submit_1.png */,
 				D59814DC1C60183B00E6E07B /* my_logo.png */,
 				D59814DE1C601A2B00E6E07B /* clogin.png */,
@@ -185,6 +200,8 @@
 				D59814F01C60217900E6E07B /* CtmRegisterViewController.m */,
 				D50700F81C6950CF00BE471B /* CtmLogInViewController.h */,
 				D50700F91C6950CF00BE471B /* CtmLogInViewController.m */,
+				D50674061C6AA25700678CDC /* CtmBookViewController.h */,
+				D50674071C6AA25700678CDC /* CtmBookViewController.m */,
 				D5795D271C60975A00A5FC85 /* DriverTableViewCells */,
 				D59814EC1C60213600E6E07B /* DriverRegisterViewController.h */,
 				D59814ED1C60213600E6E07B /* DriverRegisterViewController.m */,
@@ -268,6 +285,7 @@
 				D5795DAE1C640D1600A5FC85 /* 40X40.png in Resources */,
 				D59814E11C601A2B00E6E07B /* dlogin.png in Resources */,
 				D5795DB01C640D1E00A5FC85 /* 167X167.png in Resources */,
+				D50674051C6A9B0300678CDC /* button-3.png in Resources */,
 				D59814DD1C60183B00E6E07B /* my_logo.png in Resources */,
 				D5795DA31C6409FE00A5FC85 /* 58X58.png in Resources */,
 				D5795DA41C6409FE00A5FC85 /* 80X80.png in Resources */,
@@ -277,6 +295,7 @@
 				D5795DAC1C640C8200A5FC85 /* 29X29.png in Resources */,
 				D5795DA51C6409FE00A5FC85 /* 87X87.png in Resources */,
 				D59814E01C601A2B00E6E07B /* clogin.png in Resources */,
+				D5E3B1471C6A856E004347F5 /* onduty.png in Resources */,
 				D59814E81C601CFA00E6E07B /* signup_1.png in Resources */,
 				D59814CC1C60163A00E6E07B /* Main.storyboard in Resources */,
 				D5795DB21C640D3100A5FC85 /* 76X76.png in Resources */,
@@ -285,6 +304,8 @@
 				D59814E71C601CFA00E6E07B /* login_1.png in Resources */,
 				D5795DAA1C640A5400A5FC85 /* 750X1334.png in Resources */,
 				D5795D1E1C60263C00A5FC85 /* submit_1.png in Resources */,
+				D5E3B14B1C6A858A004347F5 /* bookings.png in Resources */,
+				D5E3B1491C6A8580004347F5 /* offduty.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +318,7 @@
 			files = (
 				D50700FA1C6950CF00BE471B /* CtmLogInViewController.m in Sources */,
 				D50700FD1C6958D000BE471B /* DriverHomeViewController.m in Sources */,
+				D50674081C6AA25700678CDC /* CtmBookViewController.m in Sources */,
 				D59814E41C601B8F00E6E07B /* LoginViewController.m in Sources */,
 				D59814C91C60163A00E6E07B /* ViewController.m in Sources */,
 				D5795D641C61625F00A5FC85 /* DriverInfo.m in Sources */,
